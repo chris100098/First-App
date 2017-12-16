@@ -14,6 +14,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 
 namespace TestApp.UWP
 {
@@ -39,6 +43,7 @@ namespace TestApp.UWP
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            AppCenter.Start("uwp={2d3ee263-b02c-4346-9a4b-d62cba4b8ff4}", typeof(Analytics), typeof(Crashes), typeof(Push));
 
             Frame rootFrame = Window.Current.Content as Frame;
 
